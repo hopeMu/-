@@ -1,0 +1,103 @@
+page{
+  width: 100%;
+  height: 100%;
+  background-color: #F6F6F6;
+}
+.header{
+  width: 94%;
+  height: 128rpx;
+  background-color: #fff;
+  padding: 57rpx 3% 28rpx 3%;
+}
+.h_left{
+  float: left;
+  width: 128rpx;
+  height: 128rpx;
+  background-color: #279B5F;
+}
+.h_left image{
+  display: block;
+  width: 85rpx;
+  height: 67rpx;
+  margin: 0 auto;
+  padding: 30rpx 0;
+}
+.h_right{
+  float: left;
+  margin-left: 50rpx;
+  height: 108rpx;
+  padding: 20rpx 0 0;
+}
+.h_text{
+  font-size: 30rpx;
+  line-height: 50rpx;
+}
+.money{
+  position: relative;
+  margin-top: 12rpx;
+  width: 94%;
+  padding: 0 3%;
+  height: 93rpx;
+  background-color: #fff;
+}
+.money text{
+  font-size: 30rpx;
+  line-height: 93rpx;
+  color: #279B5F;
+}
+.money text:nth-child(1){
+  color: #000;
+}
+.money text:nth-child(2){
+  font-size: 48rpx;
+}
+.money .m_btn{
+  position: absolute;
+  right: 50rpx;
+  top: 22rpx;
+  width: 170rpx;
+  height: 54rpx;
+  background-color: #279B5F;
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 54rpx;
+  text-align: center;
+  border-radius: 6rpx;
+}
+.time{
+  margin-top: 12rpx;
+  width: 94%;
+  padding: 0 3%;
+  background-color: #fff;
+}
+.t_text{
+  width: 100%;
+  height: 93rpx;
+  font-size: 30rpx;
+  line-height: 93rpx;
+  color: #2A2626;
+}
+.t_text text{
+  margin-right: 10rpx;
+}
+.footer{
+  margin-top: 12rpx;
+  width: 94%;
+  padding: 0 3%;
+  background-color: #fff;
+}
+.btn{
+  width: 100%;
+  height: 93rpx;
+  font-size: 30rpx;
+  line-height: 93rpx;
+}
+.f_left{
+  float: left;
+}
+.f_right{
+  float: right;
+  width: 18rpx;
+  height: 31rpx;
+  padding: 30rpx 0; 
+}

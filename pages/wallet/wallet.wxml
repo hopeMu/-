@@ -1,0 +1,39 @@
+<!--pages/wallet/wallet.wxml-->
+<view class='wallet-container'>
+  <!-- 无押金 -->
+  <view class='wallet-top' wx:if="{{status==0}}">
+    <image src="http://zhujialin.oss-cn-shanghai.aliyuncs.com/xiaochenxgu/84c21f1cb76fcc61cfeb23246fff3c14.png" class='wallet-img'></image>
+    <view class='wallet-text'>
+      <view class='text-tit'>单车卡</view>
+      <view class='text-con'>缴纳199元押金，畅骑朱家林</view>
+      <button class='wallet-btn' bindtap='pay'>交押金</button>
+    </view>
+  </view>
+  <!-- 有押金 -->
+  <view class='wallet-top' wx:elif="{{status==1}}">
+    <image src="http://zhujialin.oss-cn-shanghai.aliyuncs.com/xiaochenxgu/33016f3a939613f9bbadd20314f30e0c.png" class='wallet-img'></image>
+    <view class='wallet-text'>
+      <view class='text-tit'>单车卡</view>
+      <view class='text-con'>尊敬的199元押金用户</view>
+      <button class='wallet-btn' bindtap='tuiClick'>退押金</button>
+    </view>
+  </view>
+  <!-- 退押金中 -->
+  <!-- <view class='wallet-top'>
+    <image src="http://zhujialin.oss-cn-shanghai.aliyuncs.com/xiaochenxgu/4d4cdd0a2752053774bbb185480e37be.png" class='wallet-img'></image>
+    <view class='wallet-text'>
+      <view class='text-tit'>单车卡</view>
+      <view class='text-con'>退押金中，暂时无法骑行</view>
+      <button class='wallet-btn'>退押金中</button>
+    </view>
+  </view> -->
+
+
+<!-- 
+  <view class='wallet-balance'>
+    <text>余额</text>
+    <text>0元</text>
+  </view> -->
+  <view class='xian'></view>
+  <view class='hr'></view>
+</view>

@@ -1,0 +1,147 @@
+<!-- 电动车 -->
+<template name="templateMap2">
+  <view class='home-container'>
+    <map id="map" class='map' longitude="{{longitude}}" latitude="{{latitude}}" scale="14" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" bindregionchange="regionchange" show-location></map>
+
+
+    <!-- 用户协议 -->
+    <cover-view class='xieyi' wx:if="{{mu_status}}">
+      <cover-view class='xy_box'>
+        <cover-view class='xy_text'>
+          本《朱家林单车租赁服务协议》(以下简称“本协议")是服务使用人(以下简称“用户“或“您")与伴农多居网络科技有限公司(以下称为“伴农乡居“或者”我们")之间关于用户下载、安装、使用“朱家林单车”软件(伴农多居网络科技有限公司开发并运营的移动端应用程序),注册、使用、管理朱家林单车”软件账号，以及使用伴农乡居公司合作提供的相关线上、线下服务所订立的协议。
+        </cover-view>
+        <cover-view class='xy_text'>
+          伴农乡居公司负责按照本协议的规定及其不时发布的操作规则提供基于互联网以及移动网的相关线上服务(包括自行车租用软件的网络服务), 及自行车线下租用服务和进行线下管理(上述线上线下服务合称为“服务”或“朱家林单车服务”)。
+        </cover-view>
+        <cover-view class='xy_text'>
+          朱家林单车服务仅向年满十六周岁、身体健康、具备骑行自行车能力的人土开放，符合上述条件的未成年人需在监护人的陪同下阅读本协议，并在监护人认可的情况下方能注册和使用服务。
+        </cover-view>
+        <cover-view class='xy_ms'>
+          <cover-view class='ms1'>点击按钮表示同意</cover-view>
+          <cover-view class='ms2' bindtap='xieyi'>《朱家林单车租赁服务协议》</cover-view>
+        </cover-view>
+        <cover-view class='btns'>
+          <cover-view class='btn1' bindtap='useragrClick' data-index='1'>同意协议并继续</cover-view>
+          <cover-view class='btn2' bindtap='useragrClick' data-index='2'>我再想想</cover-view>
+        </cover-view>
+      </cover-view>
+    </cover-view>
+    <cover-view wx:if="{{qx_lunxun.type==0}}" class='qx_newsBox'>
+      <!-- 骑行中的提示 -->
+      <cover-view class='qx_news' wx:if="{{bth_status}}" bindtap='qx_xingcheng' data-id='{{qx_lunxun.id}}'>
+        <cover-image class='qx_bg' src='http://zhujialin.oss-cn-shanghai.aliyuncs.com/xiaochenxgu/a42b072412fc300cd915ba768f08c13a.png'></cover-image>
+        <cover-view class='qx_box'>
+          <cover-view class='qx_text'>您有正在进行的电动车行程</cover-view>
+          <cover-view class=''>已经骑行了{{qx_lunxun.time}}分钟</cover-view>
+        </cover-view>
+        <cover-view class='qx_img'>
+          <cover-image class='' src='/images/icon/jiao_bai.png'></cover-image>
+        </cover-view>
+        <!-- <cover-view class='electricity'>
+        <cover-view class='e_text'>电量剩余:</cover-view>
+        <cover-view class="e_text {{qx_lunxun.quantity<20?'e_color':' '}}">{{qx_lunxun.quantity}}%</cover-view>
+        <cover-view class="e_box {{qx_lunxun.quantity<20?'e_color':' '}}">
+          <cover-view class="e_bgc {{qx_lunxun.quantity<20?'e_color':' '}}" style='width:{{qx_lunxun.quantity}}%'></cover-view>
+        </cover-view>
+        <cover-view class="e_dian {{qx_lunxun.quantity<20?'e_color':' '}}"></cover-view>
+      </cover-view> -->
+      </cover-view>
+
+    </cover-view>
+
+    <cover-view wx:elif="{{qx_lunxun.type==1}}" class='qx_newsBox'>
+      <cover-view wx:if="{{hailiangStatus}}">
+        <cover-view class='qx_news'>
+          <cover-image class='qx_bg' src='http://zhujialin.oss-cn-shanghai.aliyuncs.com/xiaochenxgu/a42b072412fc300cd915ba768f08c13a.png'></cover-image>
+          <cover-view class='qx_box1'>
+            <cover-view class='qx_text'>您有正在进行的电动车行程</cover-view>
+            <cover-view class='qx_text'>{{qx_lunxun.money}}元</cover-view>
+            <cover-view class="qx_btn" bindtap='btnPay'>立即支付</cover-view>
+
+          </cover-view>
+        </cover-view>
+      </cover-view>
+
+    </cover-view>
+
+    <!-- 温馨指南 -->
+    <cover-view class='guide' bindtap='guideClick' wx:elif="{{!qx_lunxun.type}}">
+      <cover-image class='guide-lefimg' src='/images/home/bike@3x.png'></cover-image>
+      <cover-view class='guide-text'>电动车还车，温馨指南</cover-view>
+      <!-- <cover-view class='guide-text'>{{latitude}}，{{longitude}}</cover-view> -->
+      <cover-image class='guide-rigimg' src='/images/home/right@3x.png'></cover-image>
+    </cover-view>
+    <!-- 车型切换 -->
+    <cover-view class='tab'>
+      <cover-view class="t_btn {{tabStatus?' ':'t_btn1'}}" bindtap='tabClick' data-status='0'>
+        <cover-view class='t_text'>自行车</cover-view>
+        <cover-view class='t_xian'></cover-view>
+      </cover-view>
+      <cover-view class="t_btn {{tabStatus?'t_btn2':' '}}" bindtap='tabClick' data-status='1'>
+        <cover-view class='t_text'>电动车</cover-view>
+        <cover-view class='t_xian'></cover-view>
+      </cover-view>
+    </cover-view>
+    <!-- 缴纳保证金 -->
+    <cover-view class='yajin' wx:if="{{yj_status}}">
+      <cover-view class='yj_box'>
+        <cover-view class='yj_text'>缴纳押金，畅骑单车</cover-view>
+        <cover-view class='yj_text yj_text2'>缴纳199元押金便可畅游园区</cover-view>
+        <cover-view class='btns' style='padding-top:50rpx;'>
+          <cover-view class='btn1' bindtap='pay'>充值押金</cover-view>
+          <cover-view class='btn2' bindtap='noPay'>我再想想</cover-view>
+        </cover-view>
+      </cover-view>
+    </cover-view>
+
+    <!-- 缴纳保证金失敗 -->
+    <cover-view class='yajin' wx:if="{{false}}">
+      <cover-view class='yj_box yj_box1'>
+        <cover-view class='yj_text'>支付失败请重新扫码</cover-view>
+        <cover-view class='yj_text yj_text2 yj_text3'>缴纳押金，畅骑单车</cover-view>
+        <cover-view class='yj_text yj_text2 yj_text3'>缴纳199元押金便可畅游园区</cover-view>
+        <cover-view class='yj_text yj_text2 yj_text3'>押金随时可退</cover-view>
+        <cover-view class='btns yj_btns' style='padding-top:10rpx;'>
+          <cover-view class='btn1'>立即骑行</cover-view>
+          <cover-view class='btn2'>我再想想</cover-view>
+        </cover-view>
+      </cover-view>
+    </cover-view>
+
+
+    <!-- 开锁后 -->
+    <cover-view class="unlocking unlocking1" bindtap="guideClick" style='font-size:36rpx;' wx:if="{{bth_status}}">
+      <cover-view class='unlocking-text'>电动车还车</cover-view>
+      <cover-view class='unlocking-text'>温馨指南</cover-view>
+      <cover-image class='u_img' src='/images/icon/jiao_bai.png'></cover-image>
+    </cover-view>
+    <!-- 开锁 -->
+    <cover-view class="unlocking unlocking1" bindtap="unlockingClick" wx:else>
+      <cover-image class='unlocking-img' src='/images/home/saoma@3x.png' wx:if="{{btn_text=='扫码开锁'}}"></cover-image>
+      <cover-image class='unlocking-img' src="/images/icon/loading1.gif" wx:else></cover-image>
+      <cover-view class='unlocking-text'>{{btn_text}}</cover-view>
+    </cover-view>
+    <!-- 控件-左 -->
+    <cover-view class="controls-left">
+      <cover-view bindtap="cuserClick">
+        <cover-image src='/images/home/cuser@3x.png' class='cont-img'></cover-image>
+      </cover-view>
+      <cover-view class='cont-img' bindtap='issue'>
+        <cover-image src='/images/home/issue@3x.png'></cover-image>
+      </cover-view>
+    </cover-view>
+
+    <!-- 控件-右 -->
+    <cover-view class="controls-right">
+      <cover-view bindtap='newsClick'>
+        <cover-image src='/images/home/report@3x.png' class='cont-img'></cover-image>
+      </cover-view>
+      <cover-view bindtap='repairClick'>
+        <cover-image src='/images/home/repairs@3x.png' class='cont-img'></cover-image>
+      </cover-view>
+      <cover-view bindtap="moveToLocation">
+        <cover-image src='/images/home/pos@3x.png' class='cont-img'></cover-image>
+      </cover-view>
+    </cover-view>
+  </view>
+</template>

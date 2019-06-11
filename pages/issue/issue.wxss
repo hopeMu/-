@@ -1,0 +1,71 @@
+page{
+  width: 100%;
+  height: 100%;
+}
+.clearfix {
+  overflow: auto;
+}
+.issue{
+  width: 100%;
+  height: 100%;
+}
+.box{
+  min-height: 100rpx;
+}
+.h1{
+  width: 100%;
+  height: 120rpx;
+  font-size: 36rpx;
+  line-height: 120rpx;
+  text-align: center;
+  font-weight: 600;
+  background-color: #F8F8F8;
+}
+.list{
+  float: left;
+  width:100%;
+  /* height: 78rpx; */
+}
+
+.title{
+  width: 94%;
+  height: 78rpx;
+  padding: 0 3%;
+}
+.title view{
+  float: left;
+  font-size: 30rpx;
+  line-height: 78rpx;
+}
+.jiao_you{
+  float: right;
+  width: 17rpx;
+  height: 29rpx;
+  padding-top: 24rpx;
+}
+.jiao_xia{
+  float: right;
+  width: 29rpx;
+  height: 17rpx;
+  padding-top: 30rpx;
+}
+.text{
+  padding: 2% 3%;
+  width: 94%;
+  /* height: 78rpx; */
+  font-size: 26rpx;
+  line-height: 42rpx;
+  color: #4F4F4F;
+  background-color: #F8F8F8;
+}
+/* <view class="issue">
+  <view class='list'>
+    <view class='title'>
+      <view>1.问题</view>
+      <image class='jiao_you' src='/images/icon/jiao_you.png'></image>
+      <!-- <image class="jiao_xia" src='/images/icon/jiao_xia.png'></image> -->
+    </view>
+    <view class='text'>答案</view>
+    
+  </view>
+</view> */

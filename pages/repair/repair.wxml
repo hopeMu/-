@@ -1,0 +1,34 @@
+<!--pages/repair/repair.wxml 单车报修-->
+<view class='repair-container'>
+  <view class="repair-item">
+    <view class='item-tit'>车辆编号:</view>
+    <input type="number" maxlength="6" class='item-inp' bindinput='getinput' value='{{id}}'/>
+  </view>
+  <view class="repair-item" wx:if="{{inputValue.length>0}}">
+    <view class='item-tit'>上传故障车辆照片/视频:</view>
+    <view class='item-tit-small'>最多上传图片/视频9个</view>
+    <view class='item-upload'>
+      <view class='item-img' wx:if="{{imgArr.length>0}}" wx:for="{{imgArr}}" wx:key="{{index}}" bindtap="preImages" data-index="{{index}}">
+        <image src="{{item.img}}"></image>
+        <view class='cha_icon' data-ids="{{item.id}}" data-status="img" catchtap='delete'>×</view>
+      </view>
+    <view class='item-vids' wx:if="{{videoArr.length>0}}" wx:for="{{videoArr}}" wx:key="{{index}}" wx:for-index="i"  bindtap="preVideo" data-index="{{i}}">
+      <video src="{{item.video}}" class='item-vid'  controls="{{false}}" autoplay="true" loop="true"></video>
+        <view class='cha_icon' data-ids="{{item.id}}" data-status="video" catchtap='delete'>×</view>
+    </view>
+      
+      <view class='item-img' wx:if="{{(imgArr.length--videoArr.length)<9}}">
+        <image src='/images/repair/jiahao@3x.png' bindtap='uploadClick'></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="repair-item">
+    <view class='item-tit'>报修描述:</view>
+    <textarea maxlength="100" class='item-textarea' bindinput="bindTextAreaBlur"  auto-height/>
+    <view class='r_text'>{{valueLength}}/100</view>
+  </view>
+  <view class='btn' bindtap='btn'>
+    <button class='repair-btn'>提交</button>
+  </view>
+</view>

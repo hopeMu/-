@@ -1,0 +1,38 @@
+<view class="journey">
+  <view class='header'>
+    <view class='h_left'>
+      <image src='/images/icon/che_img.png'></image>
+    </view>
+    <view class='h_right'>
+      <view class='h_text'>车辆编号</view>
+      <view class='h_text'>{{content.lock_id}}</view>
+    </view>
+  </view>
+  <view class='money'>
+    <text>已产生的租借费用：</text>
+    <text>{{content.money}}</text>
+    <text>元</text>
+    <view class='m_btn' wx:if="{{content.status==2}}" bindtap='btnPay'>立即付款</view>
+  </view>
+  <view class='time'>
+    <view class='t_text'>
+      <text>开锁时间：</text>
+      <text>{{content.start_time}}</text>
+    </view>
+    <view class='t_text'>
+      <text>关锁时间：</text>
+      <text style='color:#279B5F' wx:if="{{content.status==1}}" bindtap='guanClick'>我已在电子围栏内成功关锁但是未结账？</text>
+      <text wx:else >{{content.stop_time}}</text>
+    </view>
+  </view>
+  <view class='footer'>
+    <view class='btn' bindtap="cuserClick">
+      <view class='f_left'>联系客服</view>
+      <image class='f_right' src='/images/user/youjiantou.png'></image>
+    </view>
+    <view class='btn' bindtap='repairClick' data-id="{{content.lock_id}}">
+      <view class='f_left'>报修</view>
+      <image class='f_right' src='/images/user/youjiantou.png'></image>
+    </view>
+  </view>
+</view>

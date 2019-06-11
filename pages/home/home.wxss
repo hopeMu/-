@@ -1,0 +1,433 @@
+/* pages/home/home.wxss */
+
+page {
+  height: 100%;
+}
+
+.home-container {
+  width: 100%;
+  height: 100%;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+}
+
+/* 温馨指南 */
+
+.guide {
+  width: 70%;
+  height: 80rpx;
+  background-color: #fff;
+  padding: 0 30rpx;
+  position: absolute;
+  top: 120rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+}
+
+.guide-text {
+  padding: 0 10rpx;
+  font-size: 30rpx;
+}
+
+.guide-lefimg {
+  width: 50rpx;
+  height: 30rpx;
+  /* margin-right: 30rpx; */
+}
+
+.guide-rigimg {
+  margin-left: 24rpx;
+  width: 15rpx;
+  height: 25rpx;
+}
+
+/* 车辆切换 */
+
+.tab {
+  width: 100%;
+  /* height: 80rpx; */
+  background-color: #fff;
+  position: absolute;
+  top: 0rpx;
+  left: 0;
+  overflow: scroll;
+}
+
+.t_btn {
+  float: left;
+  width: 20%;
+  margin: 0 15%;
+  height: 80rpx;
+  box-sizing: border-box;
+}
+.t_text{
+  width: 100%;
+  height: 74rpx;
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 74rpx;
+}
+.t_btn1 .t_xian{
+  width: 100%;
+  height: 6rpx;
+  background-color: #279b5f;
+}
+.t_btn2 .t_xian{
+  width: 100%;
+  height: 6rpx;
+  background-color: #00a0e9;
+}
+.t_btn1{
+  font-weight: 600;
+  color: #279b5f;
+}
+.t_btn2{
+  font-weight: 600;
+  color: #00a0e9;
+}
+/* 协议 */
+
+.xieyi {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  z-index: 100;
+}
+
+.xy_box {
+  margin: 0 auto;
+  margin-top: 10%;
+  width: 640rpx;
+  /* min-height: 80%; */
+  background-color: #fff;
+}
+
+.xy_text {
+  width: 85%;
+  margin: 0 auto;
+  margin-top: -50rpx;
+  /* height: 200rpx; */
+  display: block;
+  white-space: pre-wrap;
+  font-size: 24rpx;
+  line-height: 32rpx;
+}
+
+.xy_text:nth-child(1) {
+  padding-top: 50rpx;
+  margin-top: 0rpx;
+}
+
+.xy_ms {
+  margin: 0 auto;
+  /* width: 72%; */
+  height: 40rpx;
+  font-size: 22rpx;
+  line-height: 40rpx;
+  text-align: center;
+}
+
+.ms1 {
+  margin-left: 15%;
+  float: left;
+}
+
+.ms2 {
+  float: left;
+  color: #279b5f;
+}
+
+.btns {
+  width: 100%;
+  padding-bottom: 50rpx;
+  /* margin-top: 50rpx; */
+}
+
+.yj-btns {
+  padding-top: 50rpx;
+}
+
+.btn1 {
+  margin: 0 auto;
+  width: 480rpx;
+  height: 95rpx;
+  background-color: #279b5f;
+  color: #fff;
+  font-size: 36rpx;
+  line-height: 95rpx;
+  text-align: center;
+  border-radius: 48rpx;
+}
+
+.btn2 {
+  padding: 20rpx 0;
+  width: 200rpx;
+  height: 50rpx;
+  margin: 0 auto;
+  font-size: 24rpx;
+  line-height: 50rpx;
+  text-align: center;
+  color: #1e1e1e;
+}
+
+/* 控件左 */
+
+.controls-left {
+  position: absolute;
+  left: 0;
+  bottom: 30rpx;
+}
+
+/* 控件-右 */
+
+.controls-right {
+  position: absolute;
+  right: 0;
+  bottom: 30rpx;
+}
+
+.cont-img {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+/* 开锁按钮 */
+
+.unlocking {
+  position: absolute;
+  bottom: 40rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 100rpx;
+  border-radius: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #279b5f;
+  transition: .2s;
+}
+.unlocking1{
+  background-color: #00a0e9;
+  transition: .2s;
+}
+.u_box{
+  width: 100%;
+  height: 100%;
+}
+.unlocking-text {
+  margin-left: 20rpx;
+  color: #fff;
+}
+
+.unlocking-img {
+  width: 45rpx;
+  height: 45rpx;
+  transition: .4s;
+}
+
+/* 骑行消息 */
+
+.qx_newsBox {
+  position: absolute;
+  left: 50%;
+  top: 120rpx;
+  margin-left: -260rpx;
+  z-index: 100;
+  width: 520rpx;
+  height: 230rpx;
+}
+
+.qx_news {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.qx_box {
+  position: absolute;
+  left: 7%;
+  top: 0;
+  width: 80%;
+  height: 100%;
+  font-size: 30rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.qx_text {
+  line-height: 56rpx;
+  padding-top: 60rpx;
+}
+
+.qx_img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 10%;
+  height: 100%;
+}
+
+.qx_img cover-image {
+  width: 17rpx;
+  height: 29rpx;
+  padding: 100rpx 0;
+}
+
+.qx_box1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 30rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.qx_box1 .qx_text:nth-child(1) {
+  padding: 20rpx;
+  font-size: 32rpx;
+}
+
+.qx_box1 .qx_text:nth-child(2) {
+  padding: 0;
+  font-size: 36rpx;
+}
+
+.qx_btn {
+  width: 170rpx;
+  height: 54rpx;
+  margin: 0 auto;
+  margin-top: 10rpx;
+  font-size: 30rpx;
+  line-height: 54rpx;
+  background-color: #279b5f;
+}
+.qx_btn1{
+  background-color: #00a0e9;
+}
+.electricity {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  /* width: 100%; */
+  height: 60rpx;
+  font-size: 24rpx;
+  line-height: 60rpx;
+  color: #fff;
+}
+
+.e_text {
+  float: left;
+}
+.e_box{
+  float: left;
+  margin-left:10rpx;
+  margin-top: 3rpx;
+  width: 50rpx;
+  height: 20rpx;
+  border: 1rpx solid #000;
+  border-radius: 5rpx;
+  overflow: scroll;
+}
+.e_bgc{
+  height: 22rpx;
+  background-color: #000;
+}
+.e_dian{
+  width: 4rpx;
+  height: 12rpx;
+  float: left;
+  margin-top: 8rpx;
+  /* position: absolute;
+  right: -8rpx;
+  top: 0; */
+  /* z-index: 101; */
+  border-radius: 0 2rpx 2rpx 0;
+  background-color: #000;
+}
+.e_color{
+  /* background-color: red;
+  border-color: red; */
+}
+/* <cover-view class='electricity'>
+          <cover-view class='e_text'>电量剩余:</cover-view>
+          <cover-view>{{qx_lunxun.quantity}}</cover-view>
+          <cover-view class='e_box'>
+            <cover-view class='e_bgc'></cover-view>
+          </cover-view>
+        </cover-view> */
+
+/* 押金 */
+
+.yajin {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.yj_box {
+  margin: 0rpx auto;
+  margin-top: 40%;
+  width: 640rpx;
+  height: 407rpx;
+  padding-top: 100rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+}
+
+.yj_text {
+  width: 100%;
+  font-size: 36rpx;
+  line-height: 50rpx;
+  text-align: center;
+}
+
+.yj_text2 {
+  font-size: 30rpx;
+}
+
+.yj_text3 {
+  color: #626262;
+}
+
+.yj_btns {
+  padding-top: 100rpx;
+}
+
+/* 缴费失败 */
+
+.yj_box1 {
+  padding-top: 57rpx;
+}
+
+.yj_box1 .yj_text:nth-child(1) {
+  padding-bottom: 30rpx;
+}
+
+.yj-box1 .yj_bths {
+  padding-top: 10rpx;
+}
+
+.u_img {
+  width: 17rpx;
+  height: 29rpx;
+  padding-left: 10rpx;
+  padding-top: 5rpx;
+}
