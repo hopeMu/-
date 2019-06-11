@@ -160,7 +160,7 @@ Page({
         data: {
           user_id: app.globalData.userInfo.user_id,
           appkey: md5.hexMD5(getApp().globalData.appKey),
-          id:that.data,id,
+          id:that.data.id,
           type: '1'
         }
       }).then(res => {

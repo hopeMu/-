@@ -69,6 +69,6 @@ App({
       console.log("全局onLaunch onload url=" + q, '1111111')
       console.log("全局onLaunch onload 参数 flag=" + utils.getQueryString(q, 'flag'), '-------', q.split('number=') + '111')
     }
-
+    //代码提交分支合并
   }
 })
