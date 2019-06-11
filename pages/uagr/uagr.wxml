@@ -1,0 +1,26 @@
+<!--pages/uagr/uagr.wxml 用户协议-->
+<view class='useragr'>
+  <!-- <view class='useragr-tit'>用户协议</view> -->
+  <view class='useragr-cont'>
+    <text>
+      本《朱家林单车租赁服务协议》(以下简称“本协议")是服务使用人(以下简称“用户“或“您")与伴农多居网络科技有限公司(以下称为“伴农乡居“或者”我们")之间关于用户下载、安装、使用“朱家林单车”软件(伴农多居网络科技有限公司开发并运营的移动端应用程序),注册、使用、管理朱家林单车”软件账号，以及使用伴农乡居公司合作提供的相关线上、线下服务所订立的协议。
+    </text>
+
+    <text>
+      伴农乡居公司负责按照本协议的规定及其不时发布的操作规则提供基于互联网以及移动网的相关线上服务(包括自行车租用软件的网络服务), 及自行车线下租用服务和进行线下管理(上述线上线下服务合称为“服务”或“朱家林单车服务”)。
+    </text>
+    
+    <text>
+      朱家林单车服务仅向年满十六周岁、身体健康、具备骑行自行车能力的人土开放，符合上述条件的未成年人需在监护人的陪同下阅读本协议，并在监护人认可的情况下方能注册和使用服务。
+    </text>
+  </view>
+
+  <view class='useragr-fot'>
+    <view class='fot-top'>
+      点击按钮即表示同意
+      <text class='fot-top-color'>《朱家林单车租赁服务协议》</text>
+    </view>
+    <button class='fot-cen' bindtap='useragrClick' data-index='1'>同意协议并继续</button>
+    <view class='fot-bot' bindtap='useragrClick' data-index='2'>我再想想</view>
+  </view>
+</view>

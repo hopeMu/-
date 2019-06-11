@@ -1,0 +1,14 @@
+<!--pages/home/home.wxml 首页-->
+
+
+
+<!-- 用户协议 -->
+<import src="/pages/template/templateMap1/templateMap1.wxml" />
+<import src="/pages/template/templateMap2/templateMap2.wxml" />
+
+<view class='home-container' wx:if="{{tabStatus}}">
+  <template is="templateMap2" data="{{latitude,longitude,phoneNumber,markers,userAgr,mu_status,yj_status,btn_text,bth_status,qx_lunxun,tabStatus,click_status,hailiangStatus,status}}"></template>
+</view>
+<view class='home-container' wx:else>
+  <template is="templateMap1" data="{{latitude,longitude,phoneNumber,markers,userAgr,mu_status,yj_status,btn_text,bth_status,qx_lunxun,tabStatus,click_status,hailiangStatus,status}}"></template>
+</view>
